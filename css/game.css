@@ -1,0 +1,53 @@
+body {
+    padding: 0;
+    margin: auto;
+}
+
+.container {
+    /* height: 100vh; */
+    background-image: url(../img/1dbbf295f3cc1290cac9de922763710285a0b4e1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cardimg {
+    width: 100%;
+    object-fit: cover;
+}
+
+.enemy-hand {
+    display: flex;
+    justify-content: center;
+}
+
+.e-handcard {
+    width: 10vw;
+    margin: 1vw;
+}
+
+.field {
+    /* width: 100vw; */
+    height: 30vh;
+    /* background-image: url(../img/v4atbsh3o844tvvytuzx.png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-hand {
+    display: flex;
+    justify-content: center;
+}
+
+.p-handcard {
+    width: 10vw;
+    margin: 1vw;
+}
+
+.result {
+    font-size: 2rem;
+    color: whitesmoke;
+    text-align: center;
+}

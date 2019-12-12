@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>奴隷側</title>
+    <link rel="stylesheet" href="css/game.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="enemy">
+            <!-- <p>敵画像</p> -->
+            <!-- <p>敵の手札</p> -->
+            <div class="enemy-hand">
+                <div class="e-handcard" id="citizen_e1"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="e-handcard" id="citizen_e2"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="e-handcard" id="citizen_e3"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="e-handcard" id="citizen_e4"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="e-handcard" id="e_emp"><img src="img/ecardemperor.jpg" class="cardimg"></div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="e-field"></div>
+            <div class="p-field"></div>
+        </div>
+        <div class="result"></div>
+        <div class="player">
+            <!-- <p>手札</p> -->
+            <div class="p-hand">
+                <div class="p-handcard" id="citizen_p1" value="1"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="p-handcard" id="citizen_p2" value="1"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="p-handcard" id="citizen_p3" value="1"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="p-handcard" id="citizen_p4" value="1"><img src="img/ecardcitizen.jpg" class="cardimg"></div>
+                <div class="p-handcard" id="p_slv"><img src="img/ecardslave.jpg" class="cardimg"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            // ここに処理を記述
+            //市民を選択したとき
+            $('#citizen_p1').on('click', function() {
+                // var p_token = $("#citizen_p1").val();
+                // enemy();
+                var e_hand_num = $(".e-handcard").length;
+                var num = Math.floor(Math.random() * e_hand_num);
+                $('.p-field').empty();
+                $('#citizen_p1').appendTo('.p-field');
+
+                console.log(e_hand_num);
+                console.log(num);
+
+                //勝ち負け判定
+                if (num == 0) {
+                    $('.result').text('あなたの負けです。(リロードボタンでニューゲーム)');
+                    $('.e-field').empty();
+                    $('#e_emp').appendTo('.e-field');
+                } else {
+                    $('.e-field').empty();
+                    $('#citizen_e1').appendTo('.e-field');
+                    $('.result').text('引き分けです。次の手を選んでください。');
+                }
+            });
+
+            $('#citizen_p2').on('click', function() {
+                // var p_token = $("#citizen_p2").val();
+                // enemy();
+                var e_hand_num = $(".e-handcard").length;
+                var num = Math.floor(Math.random() * e_hand_num);
+                $('.p-field').empty();
+                $('#citizen_p2').appendTo('.p-field');
+
+                console.log(e_hand_num);
+                console.log(num);
+
+                //勝ち負け判定
+                if (num == 0) {
+                    $('.result').text('あなたの負けです。(リロードボタンでニューゲーム)');
+                    $('.e-field').empty();
+                    $('#e_emp').appendTo('.e-field');
+                } else {
+                    $('.e-field').empty();
+                    $('#citizen_e2').appendTo('.e-field');
+                    $('.result').text('引き分けです。次の手を選んでください。');
+                }
+            });
+
+            $('#citizen_p3').on('click', function() {
+                // var p_token = $("#citizen_p2").val();
+                // enemy();
+                var e_hand_num = $(".e-handcard").length;
+                var num = Math.floor(Math.random() * e_hand_num);
+                $('.p-field').empty();
+                $('#citizen_p3').appendTo('.p-field');
+
+                console.log(e_hand_num);
+                console.log(num);
+
+                //勝ち負け判定
+                if (num == 0) {
+                    $('.result').text('あなたの負けです。(リロードボタンでニューゲーム)');
+                    $('.e-field').empty();
+                    $('#e_emp').appendTo('.e-field');
+                } else {
+                    $('.e-field').empty();
+                    $('#citizen_e3').appendTo('.e-field');
+                    $('.result').text('引き分けです。次の手を選んでください。');
+                }
+            });
+
+            $('#citizen_p4').on('click', function() {
+                // var p_token = $("#citizen_p2").val();
+                // enemy();
+                var e_hand_num = $(".e-handcard").length;
+                var num = Math.floor(Math.random() * e_hand_num);
+                $('.p-field').empty();
+                $('#citizen_p4').appendTo('.p-field');
+
+                console.log(e_hand_num);
+                console.log(num);
+
+                //勝ち負け判定
+                if (num == 0) {
+                    $('.result').text('あなたの負けです。(リロードボタンでニューゲーム)');
+                    $('.e-field').empty();
+                    $('#e_emp').appendTo('.e-field');
+                } else {
+                    $('.e-field').empty();
+                    $('#citizen_e4').appendTo('.e-field');
+                    $('.result').text('引き分けです。次の手を選んでください。');
+                }
+            });
+
+            //奴隷を選択したとき
+            $('#p_slv').on('click', function() {
+                // var p_token = $("#citizen_p2").val();
+                var e_hand_num = $(".e-handcard").length;
+                var num = Math.floor(Math.random() * e_hand_num);
+                $('.p-field').empty();
+                $('#p_slv').appendTo('.p-field');
+
+                if (num == 0) {
+                    $('.result').text('あなたの勝ちです。(リロードボタンでニューゲーム)');
+                    $('.e-field').empty();
+                    $('#e_emp').appendTo('.e-field');
+                } else {
+                    $('.e-field').empty();
+                    // var txt_num = String(num);
+                    $('<div class="e-handcard" id="citizen_e1"><img src="img/ecardcitizen.jpg" class="cardimg"></div>').appendTo('.e-field');
+                    $('.result').text('あなたの負けです。(リロードボタンでニューゲーム)');
+                }
+            });
+
+            // function enemy(num) {
+            //     var e_hand_num = $(".e-handcard").length;
+            //     // console.log(e_hand_num);
+            //     var num = Math.floor(Math.random() * e_hand_num);
+            //     // console.log(num);
+
+            //     return num;
+            // }
+        });
+    </script>
+</body>
+
+</html>
